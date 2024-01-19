@@ -43,7 +43,25 @@ p {
 ::placeholder, label {
   color: #fff
 }
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#logo {
+  display: flex;
+  flex-direction: column;
+  font-weight: 600;
+  align-items: center;
+  padding: 20px;
+}
+#logo #UMBN {
+  font-size: 30px;
 
+}
+#logo #collaborative {
+  font-size: 14px;
+}
 textarea {
   border-radius: 3px;
   border: 1px solid #e5e5e5;
