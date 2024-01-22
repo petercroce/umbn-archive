@@ -1,25 +1,48 @@
+/*
+UMBN Brand Colors
+Primary #65a3d6
+Secondary #004787
+Dark Accent #1c1c1c
+Mid Accent #777777
+Light Accent #bcbcbc
+*/
 :root {
-  --primary: #65a3d6;
-  --secondary: #004787;
-  --lightGray: #e5e5e5
+  --primary: rgb(101, 163, 214);
+  --secondary: rgba(0, 71, 135, 100%);
+  --light-neutral: rgba(238, 238, 238, 100%);
+  --light-neutral70: rgba(238, 238, 238, 70%);
+  --light-neutral50: rgba(238, 238, 238, 50%);
+  --light-neutral20: rgba(238, 238, 238, 20%);
+
+  --dark-netural: rgba(61,61,61, 100%);
+  --dark-neutral70: rgba(61,61,61, 70%);
+  --dark-neutral50: rgba(61,61,61, 50%);
+  --dark-neutral20: rgba(61,61,61, 20%);
+
+  --background: linear-gradient(290deg, rgb(238, 238, 238) 0%, rgb(101, 163, 214) 75%);
+  --font-color: var(--light-neutral);
+  --form-underline: var(--light-neutral);
+  --form-border: var(--light-neutral50);
+  --form-border-hover: var(--light-neutral);
 }
 
 html {
   font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-
+  background: var(--background);
+  background-color: var(--light-neutral);
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--primary);
+  font-family: 'Inter', sans-serif;
 }
 
 p {
-  color: #eee;
+  color: var(--font-color);
   line-height: 1.5;
   font-size: 1.25em;
-  word-break: break-word
+  word-break: break-word;
 }
 
 @media (max-width:480px) {
@@ -28,32 +51,26 @@ p {
   }
 }
 
-::-webkit-input-placeholder, label {
-  color: #fff
-}
-
-::-moz-placeholder, label {
-  color: #fff
-}
-
-::-ms-input-placeholder, label {
-  color: #fff
-}
-
-::placeholder, label {
-  color: #fff
+nav {
+  position: absolute;
 }
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
 }
+nav button {
+  border: none;
+}
 #logo {
   display: flex;
   flex-direction: column;
-  font-weight: 600;
   align-items: center;
+
+  background-color: var(--light-neutral);
+  font-weight: 600;
   padding: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, Roboto, Oxygen, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 #logo #UMBN {
   font-size: 30px;
@@ -62,7 +79,8 @@ nav ul {
 #logo #collaborative {
   font-size: 14px;
 }
-textarea {
+
+/* textarea {
   border-radius: 3px;
   border: 1px solid #e5e5e5;
   border: 1px solid var(--lightGray)
@@ -165,7 +183,7 @@ input:focus~label, input:valid~label, textarea:focus~label, textarea:valid~label
   font-size: .9rem;
   background-color: #004787;
   background-color: var(--secondary)
-}
+} */
 
 a, a:visited {
   color: #eee;
@@ -190,7 +208,6 @@ a:active, a:hover {
 
 section {
   margin: 30px 30px 0 30px;
-  background-color: var(--secondary);
   max-width: 900px;
 }
 
@@ -234,7 +251,7 @@ header {
   }
 }
 h1 {
-  color: #eee;
+  color: var(--font-color);
   font-size: 4rem;
   display: block;
 }
@@ -250,9 +267,8 @@ h1 {
 }
 
 h2 {
-  color: #eee;
+  color: var(--font-color);
   font-size: 2rem;
-  /* font-family: 'Aleo', serif; */
   line-height: 1.2;
   display: block;
 }
@@ -273,11 +289,13 @@ h2 {
 
 
 footer a, footer a:visited {
-  color: #3d3d3d;
-  fill: #3d3d3d;
-  border-bottom: 1px solid rgba(101, 163, 214, .5)
+  color: var(--font-color);
+  fill: var(--font-color);
+  border-bottom: 1px solid rgba(101, 163, 214, .5);
 }
 footer {
+  color: var(--dark-neutral);
+  font-weight: 200;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -307,15 +325,122 @@ footer .footer-text {
   }
 }
 footer .footer-item {
-  width: 250;
+  max-width: 350px;
   text-align: center;
 }
 @media (max-width:992px) {
   footer .footer-item {
-    width: none;
+    max-width: none;
+    margin: 30px 0;
   }
 }
-footer .instagram-icon {
-  padding: 10;
-  padding-bottom: 5;
+footer .instagram-icon svg {
+  padding: 10px;
+  padding-bottom: 5px;
+  height: 20px;
+}
+
+/* Forms */
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.inputGroup input, .inputGroup textarea {
+  color: var(--light-neutral);
+  font-size: 1.25rem;
+  font-family: 'Inter', sans-serif;
+  padding: 0.65rem 0;
+  padding-left: 13px;
+  margin: 1rem 0px;
+  width: calc(100% - 15px);
+
+  border: 1px solid var(--form-border);
+  border-bottom: 1px solid var(--form-border);
+  border-radius: 3px;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  background-image: linear-gradient(180deg,transparent 93%,var(--form-underline) 0);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+}
+.inputGroup textarea {
+  border: 1px solid var(--form-border);
+}
+input:focus, input:active,
+textarea:focus, textarea:active {
+  background-image: linear-gradient(180deg,transparent 93%,var(--form-underline) 0);
+  /* background-size: 100% 100%; */
+  border: 1px solid var(--form-border-hover);
+}
+
+form button {
+  color: var(--form-border);
+  font-size: 1.25rem;
+  margin: 1rem 0px;
+  padding: 0.65rem 0.65rem;
+  text-align: center;
+
+  border: 1px solid var(--form-border);
+  border-radius: 3px;
+  background-color: var(--background);
+  transition: all 0.3s ease-in-out;
+  background-image: linear-gradient(180deg,transparent 0%, var(--light-neutral20) 0);
+  background-size: 0 100%;
+  background-repeat: no-repeat;
+}
+ form button:active, form button:focus, form button:hover {
+  /* background-size: 100% 100%; */
+  color: var(--form-border-hover);
+  border: 1px solid var(--form-border-hover);
+}
+form button:active, form button:focus {
+ background-size: 100% 100%;
+}
+/* material design label styling */
+::placeholder, label {
+  color: var(--light-neutral50);
+}
+.inputGroup {
+  position:relative;
+  margin-bottom:25px;
+}
+label {
+  font-size:1.25rem;
+  position:absolute;
+  pointer-events:none;
+  left:7px;
+  top:28px;
+  transition:0.2s ease all;
+  -moz-transition:0.2s ease all;
+  -webkit-transition:0.2s ease all;
+  padding: 0px 5px;
+}
+input:focus ~ label, input:valid ~ label,
+textarea:focus ~ label, textarea:valid ~ label {
+  top:5px;
+  left: -2px;
+  font-size:.8rem;
+  background-color: var(--primary);
+  padding: 3px 10px 3px 5px;
+}
+
+/* Resets and browser-specific */
+textarea, select, input, button {
+  outline: none;
+}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px #004787 inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
